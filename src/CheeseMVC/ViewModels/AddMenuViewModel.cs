@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CheeseMVC.Models
+namespace CheeseMVC.ViewModels
 {
-    public enum CheeseType
+    public class AddMenuViewModel
     {
-        Hard, Soft, Fake
     }
 }
