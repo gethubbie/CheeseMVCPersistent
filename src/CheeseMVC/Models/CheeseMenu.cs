@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CheeseMVC.Models
 {
-    public class CheeseMenus
+    public class CheeseMenu
     {
         public int CheeseID { get; set; }
         public Cheese Cheese { get; set; }
