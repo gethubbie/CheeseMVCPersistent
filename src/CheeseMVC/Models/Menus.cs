@@ -8,9 +8,9 @@ namespace CheeseMVC.Models
     public class Menu
     {
         public int ID { get; set; }
-        public string Nmae { get; set; }
+        public string Name { get; set; }
 
-        public IList<CheeseMenu> CheeseMenus { get; set; }
+        public IList<CheeseMenu> CheeseMenu { get; set; }
     }
 }
        
