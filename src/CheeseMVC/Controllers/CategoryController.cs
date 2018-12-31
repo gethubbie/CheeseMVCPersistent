@@ -30,7 +30,7 @@ namespace CheeseMVC.Controllers
         {
             AddCategoryViewModel addCategoryViewModel = new AddCategoryViewModel();
 
-            return View(addCategoryViewModel);
+            return View();
         }
 
         [HttpPost]

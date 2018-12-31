@@ -1,16 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using CheeseMVC.Data;
 using CheeseMVC.Models;
+using CheeseMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CheeseMVC.ViewModels;
+
 
 namespace CheeseMVC.Controllers
 {
     public class MenuController : Controller
     {
-        private readonly CheeseDbContext context;
+        private CheeseDbContext context;
 
         public MenuController(CheeseDbContext dbContext)
         {
@@ -39,13 +42,13 @@ namespace CheeseMVC.Controllers
                 Menu newMenu = new Menu
 
                 {
-                    Name = addMenuViewModel.Name
+                    Name = addMenuViewModel.Name,
                 };
 
                 context.Menus.Add(newMenu);
                 context.SaveChanges();
 
-                return Redirect("/Menu");
+                return Redirect("/Menu/ViewMenu/" + newMenu.ID);
             }
 
             return View(addMenuViewModel);
@@ -53,6 +56,8 @@ namespace CheeseMVC.Controllers
 
         public IActionResult ViewMenu(int id)
         {
+
+            //Menu menu = context.Menus.Find(id);
             List<CheeseMenu> items = context
                 .CheeseMenus
                 .Include(item => item.Cheese)
@@ -92,13 +97,13 @@ namespace CheeseMVC.Controllers
 
                 if (existingItems.Count == 0)
                 {
-                    CheeseMenu cheesemenu = new CheeseMenu
+                    CheeseMenu menuItem = new CheeseMenu
                     {
                         Cheese = context.Cheeses.Single(c => c.ID == cheeseID),
                         Menu = context.Menus.Single(m => m.ID == menuID)
                     };
 
-                    context.CheeseMenus.Add(cheesemenu);
+                    context.CheeseMenus.Add(menuItem);
                     context.SaveChanges();
                 }
                 return Redirect(string.Format("Menu/ViewMenu/{0}", addMenuItemViewModel.MenuID));
