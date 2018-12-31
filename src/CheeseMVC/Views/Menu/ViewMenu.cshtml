@@ -4,10 +4,11 @@
 }
 
 <title>@Model.Menu.ID</title>
+
 <h2>Model.Menu.Name</h2>
 
 <ul>
-    @foreach (var CheeseMenu in Model.Item)
+    @foreach (var CheeseMenu in Model.Items)
     {
         <li>
             @CheeseMenu.Cheese.Name

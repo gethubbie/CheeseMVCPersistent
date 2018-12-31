@@ -5,6 +5,8 @@
 
 }
 
+<h1>@ViewBag.title</h1>
+
 <form asp-controller="Menu" asp-action="AddItem" method="post">
 
     <div class="form-group">
@@ -16,7 +18,7 @@
 
     <input type="hidden" name="MenuID" value="@Model.Menu.ID" />
 
-    <input tupe="Submit" value="Add Item" />
+    <input type="Submit" value="Add Item" />
 
 </form>
 

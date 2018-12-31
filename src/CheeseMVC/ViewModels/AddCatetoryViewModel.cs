@@ -13,9 +13,5 @@ namespace CheeseMVC.ViewModels
         [Required]
         [Display(Name = "Category Name")]
         public string Name { get; set; }
-
-  
-            
-        
     }
 }

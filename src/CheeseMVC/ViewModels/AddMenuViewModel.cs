@@ -12,5 +12,4 @@ namespace CheeseMVC.ViewModels
         [Display(Name = "Memu Name")]
         public string Name { get; set; }
     }
-
 }

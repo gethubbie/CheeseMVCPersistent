@@ -11,6 +11,8 @@ namespace CheeseMVC.ViewModels
         public List<SelectListItem> Cheeses { get; set; }
 
         public int MenuID { get; set; }
+
+        [Display(Name = "Cheese")]
         public int CheeseID { get; set; }
 
         public AddMenuItemViewModel() { }
