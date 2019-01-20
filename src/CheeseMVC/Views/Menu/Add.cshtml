@@ -9,9 +9,14 @@
 <h2>Add</h2>
 
 <form asp-controller="Menu" asp-action="Add" method="post">
-    <label asp-for="Name"><</label>
-    <input asp-for="Name" type="text" />
-    <input type="submit" value="Add Menu"/>
+
+    <div class="form-group">
+
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" />
+        <input type="submit" value="Create Menu" />
+    </div>
+
     <span asp-validation-for="Name"></span>
 </form>
 

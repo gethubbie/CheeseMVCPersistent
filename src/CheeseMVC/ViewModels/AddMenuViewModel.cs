@@ -9,7 +9,7 @@ namespace CheeseMVC.ViewModels
     public class AddMenuViewModel
     {
         [Required]
-        [Display(Name = "Memu Name")]
+        [Display(Name = "Menu Name")]
         public string Name { get; set; }
     }
 }

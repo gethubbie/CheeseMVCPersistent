@@ -1,5 +1,5 @@
 ﻿using CheeseMVC.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
+//using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,5 +13,10 @@ namespace CheeseMVC.ViewModels
         [Required]
         [Display(Name = "Category Name")]
         public string Name { get; set; }
+
+        public AddCategoryViewModel()
+        {
+
+        }
     }
 }

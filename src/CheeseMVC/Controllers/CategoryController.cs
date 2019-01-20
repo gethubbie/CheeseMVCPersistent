@@ -20,9 +20,11 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Index()
         {
-            List<CheeseCategory> allcategories = context.Categories.ToList();
+            //List<CheeseCategory> allcategories = context.Categories.ToList();
+            ViewBag.allcategories = context.Categories.ToList();
 
-            return View(allcategories);
+            //return View(allcategories);
+            return View();
 
         }
 
@@ -30,7 +32,8 @@ namespace CheeseMVC.Controllers
         {
             AddCategoryViewModel addCategoryViewModel = new AddCategoryViewModel();
 
-            return View();
+            //return View();
+            return View(addCategoryViewModel);
         }
 
         [HttpPost]

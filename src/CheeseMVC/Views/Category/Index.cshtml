@@ -3,8 +3,8 @@
 <h1>Add Category</h1>
 
 <ul>
-
-    @foreach (var category in Model)
+ 
+    @foreach (var category in ViewBag.allCategories)
 
     {
         <li>@category.Name</li>
